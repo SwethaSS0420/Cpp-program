@@ -1,0 +1,25 @@
+//Nested namespace and using them
+#include <iostream>
+using namespace std;
+namespace sp_1
+{
+    int data=25;
+    void func()
+    {
+        cout<<"Inside sp_1"<<endl;
+    }
+    namespace sp_2
+    {
+        void func()
+        {
+            cout<<"Inside sp_2"<<endl;
+        }
+    }
+}
+using namespace sp_1::sp_2;
+int main()
+{
+    func();
+    sp_1::func();
+    cout<<sp_1::data;
+}
