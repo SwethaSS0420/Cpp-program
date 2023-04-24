@@ -1,0 +1,13 @@
+//Progarm to get 2 numbers from user and print the sum
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout << "Enter a: ";
+    cin >>a;
+    cout << "Enter b: ";
+    cin>>b;
+    cout<<a<<" + "<<b<<" = "<<a+b;
+    return 0;
+}
