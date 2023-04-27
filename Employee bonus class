@@ -1,0 +1,40 @@
+//Program to find the bonus of an employee and add it to their salary
+#include <iostream>
+using namespace std;
+class salbonus
+{
+    public:
+    int getinfo(int *sal,int *work)
+    {
+        cout<<"Enter your salary: ";
+        cin>>*sal;
+        cout<<"Enter your hours of work/day: ";
+        cin>>*work;
+    }
+    int addsal(int *sal)
+    {
+        if (*sal<500)
+        {
+            *sal+=10;
+        }
+    }
+    int addwork(int *sal,int *work)
+    {
+        if (*work>6)
+        {
+            *sal+=5;
+        }
+    }
+
+};
+
+int main() 
+{
+    salbonus employee;
+    int sal,work;
+    employee.getinfo(&sal,&work);
+    employee.addsal(&sal);
+    employee.addwork(&sal,&work);
+    cout<<"Your salary after incrementation is: "<<sal;
+    return 0;
+}
