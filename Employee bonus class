@@ -33,8 +33,15 @@ int main()
     salbonus employee;
     int sal,work;
     employee.getinfo(&sal,&work);
-    employee.addsal(&sal);
-    employee.addwork(&sal,&work);
-    cout<<"Your salary after incrementation is: "<<sal;
+    if((sal>=0&&sal<=1001)&&(work>=1&&work<=10))
+    {
+        employee.addsal(&sal);
+        employee.addwork(&sal,&work);
+        cout<<"Your salary after incrementation is: "<<sal;
+    }
+    else
+    {
+        cout<<"Enter valid details";
+    }
     return 0;
 }
