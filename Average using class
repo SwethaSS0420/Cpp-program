@@ -1,0 +1,31 @@
+//Program to calculate the average of n numbers enetered by the user using class
+#include <iostream>
+using namespace std;
+class avg
+{
+    public:
+    int num;
+    int sum=0;
+    void calsum(int num)
+    {
+        sum+=num;
+    }
+    float retsum()
+    {
+        return sum;
+    }
+};
+int main()
+{
+    avg a;
+    int n,num;
+    cout<<"enter lim: ";
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cout<<"enter num: ";
+        cin>>num;
+        a.calsum(num);
+    }
+    cout<<"sum = "<<a.retsum()<<"\tavg = "<<a.retsum()/n;
+}
