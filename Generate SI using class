@@ -1,0 +1,30 @@
+// A program to calculate the simple interest value using classes concept
+#include <iostream>
+using namespace std;
+class interest
+{
+    public:
+    int p,t;
+    float r,interest;
+    public:
+    void setvalue(int pr,float ra,int ti)
+    {
+        p=pr;
+        r=ra;
+        t=ti;
+    }
+    float calint()
+    {
+        interest=(p*r*t)/100;
+        return interest;
+    }
+};
+int main() 
+{
+    interest in;
+    int p,t;
+    float r;
+    cin>>p>>r>>t;
+    in.setvalue(p,r,t);
+    cout<<in.calint();
+}
