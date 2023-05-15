@@ -1,0 +1,25 @@
+Program to print the volume of cube using constructors
+#include <iostream>
+using namespace std;
+class volume
+{
+  private:
+  float vol;
+  public:
+  volume(float s)
+  {
+    vol=s*s*s;
+  }
+  float return_volume()
+  {
+    return vol;
+  }
+};
+int main()
+{
+  float side,ans;
+  volume cube(side);
+  ans=cube.return(side);
+  cout<<"volume of cube = "<<ans<<endl;
+  return 0;
+}
