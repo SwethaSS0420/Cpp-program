@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class student
+{
+    private:
+        string name;
+        int roll;
+        int age;
+    public:
+        student(string s,int r,int a)
+        {
+            name=s;
+            roll=r;
+            age=a;
+            cout<<"Name of the student: "<<name<<endl;
+            cout<<"Roll number: "<<roll<<endl;
+            cout<<"Age: "<<age<<endl;
+        }
+};
+int main()
+{
+    string s;
+    int r,a;
+    cout<<"Enter the name of the student: ";
+    cin>>s;
+    cout<<"Enter the roll number: ";
+    cin>>r;
+    cout<<"Enter the age: ";
+    cin>>a;
+    student s1(s,r,a);
+}
