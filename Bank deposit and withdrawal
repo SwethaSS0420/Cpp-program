@@ -1,0 +1,56 @@
+//Program to create a bank environment of adding deposit amout to current balance and deducing and displaying the current bank balance
+#include <iostream>
+using namespace std;
+class bank
+{
+    private:
+    float balance;
+    
+    public:
+    bank(float bal)
+    {
+        balance=bal;
+    }
+    
+    void deposit(float amt)
+    {
+        balance+=amt;
+    }
+    float withdraw(float amt)
+    {
+        if(balance>=amt)
+        {
+            balance-=amt;
+            cout<<"Transaction completed!!"<<endl;
+            return balance;
+        }
+        else
+        {
+            return 0.0;
+        }
+    }
+};
+int main()
+{
+    float bal,dep,wit,ans;
+    cout<<"Enter your current balance"<<endl;
+    cin>>bal;
+    bank b(bal);
+    cout<<"How much would you like to deposit?"<<endl;
+    cin>>dep;
+    b.deposit(dep);
+    cout<<"How much would you like withdraw?"<<endl;
+    cin>>wit;
+    ans=b.withdraw(wit);
+    if (ans==0.0)
+    {
+        cout<<"Sorry you do not have sufficient balance";
+    }
+    else
+    {
+        cout<<"Thank you for using our bank\nYour bank balance was: "<<bal<<endl;
+        cout<<"After deposit: "<<(bal+dep)<<endl;
+        cout<<"Your current balance is: "<<ans<<endl;
+    }
+    return 0;
+}
