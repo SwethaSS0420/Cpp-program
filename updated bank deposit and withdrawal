@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+class bank
+{
+    private:
+    float balance;
+    
+    public:
+    bank(float bal)
+    {
+        balance=bal;
+    }
+    
+    float deposit(float amt)
+    {
+        balance+=amt;
+        return balance;
+    }
+    float withdraw(float amt)
+    {
+        if(balance>=amt)
+        {
+            balance-=amt;
+            cout<<"Transaction completed!!"<<endl;
+            return balance;
+        }
+        else
+        {
+            return 0.0;
+        }
+    }
+};
+int main()
+{
+    float bal,dep,wit,ans,ans1;
+    int code;
+    cout<<"Enter your current balance"<<endl;
+    cin>>bal;
+    bank b(bal);
+    cout<<"Do you want to deposit money?\nIf yes enter 1\nElse enter 0"<<endl;
+    cin>>code;
+    if(code==1)
+    {
+        cout<<"How much would you like to deposit?"<<endl;
+        cin>>dep;
+        ans1=b.deposit(dep);
+        cout<<"Now your bank balance is: "<<ans1<<endl;
+    }
+    cout<<"Do you want to withdraw money?\nIf yes enter 1\nElse enter 0"<<endl;
+    cin>>code;
+    if(code==1)
+    {
+        cout<<"How much would you like withdraw?"<<endl;
+        cin>>wit;
+        ans=b.withdraw(wit);
+        if (ans==0.0)
+        {
+            cout<<"Sorry you do not have sufficient balance";
+        }
+        else
+        {
+            cout<<"Your current balance is: "<<ans<<endl;
+        }
+    }
+    else
+    {
+        cout<<"Thank you";
+    }
+    return 0;
+}
