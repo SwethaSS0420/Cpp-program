@@ -1,0 +1,101 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class account
+{
+    public:
+    string name;
+    int accno;
+    int acctyp;
+    void get()
+    {
+        cout<<"Enter your name: ";
+        cin>>name;
+        cout<<"Enter your account number: ";
+        cin>>accno;
+        cout<<"Enter your account type\n1.Current account\n2.Savings accout: "<<endl;
+        cin>>acctyp;
+    }
+};
+class curacc: public account
+{
+    public:
+    float bal;
+    float amt;
+    float minbal = 1000;
+    void deposit()
+    {
+        cout<<"Enter your current balance: ";
+        cin>>bal;
+        cout<<"Enter amount to deposit: ";
+        cin>>amt;
+        bal+=amt;
+        cout<<"Amount deposited successfully"<<endl;
+        cout<<"Your current balance is "<<bal<<endl;
+        cout<<"Thank you\n";
+    }
+    void withdraw()
+    {
+        cout<<"Enter your current balance: ";
+        cin>>bal;
+        cout<<"Enter amount to withdraw: ";
+        cin>>amt;
+        if(bal-amt>minbal)
+        {
+            bal-=amt;
+            cout<<"Amount successfully withdrawn"<<endl;
+            cout<<"Your current balance is "<<bal<<endl;
+            cout<<"Thank you\n";
+        }
+        else
+        {    cout<<"You cannot withdraw "<<amt<<"to maintain minimum balance"<<endl;
+        }
+    }
+};
+class savacc: public account
+{
+    public:
+    float p;
+    float r;
+    float t;
+    float amt;
+    float minbal = 1000;
+    void CI()
+    {
+        cout<<"Enter your current balance (principle) for compound interest: ";
+        cin>>p;
+        cout<<"Enter your interest rate: ";
+        cin>>r;
+        cout<<"Enter your time period : ";
+        cin>>t;
+        float y=pow(1+0.01*r,t);
+        amt=p+p*y;
+        cout<<"Your money after "<<t<<" years is "<<amt<<endl;
+        cout<<"Thank you\n";
+    }
+};
+int main()
+{
+    account a;
+    a.get();
+    if(a.acctyp==1)
+    {
+        int x;
+        curacc b;
+        cout<<"What do you like to do?\n1.Deposit\n2.Withdraw\n";
+        cin>>x;
+        if(x==1)
+        {
+            b.deposit();
+        }
+        else if(x==2)
+        {
+            b.withdraw();
+        }
+    }
+    else if(a.acctyp==2)
+    {
+        savacc c;
+        c.CI();
+    }
+} 
