@@ -1,0 +1,27 @@
+//A program to multiply two numbers using ^ operator(operator overloading)
+#include<iostream>
+using namespace std;
+class mul
+{
+    public:
+    float a;
+    mul(float b)
+    {
+        a=b;
+    }
+    mul operator ^ (mul x)
+    {
+        mul y=a*(x.a);
+        return y;
+    }
+};
+int main()
+{
+    float n1,n2;
+    cin>>n1;
+    cin>>n2;
+    mul m(n1);
+    mul t(n2);
+    mul z=m ^ t;
+    cout<<z.a;
+}
